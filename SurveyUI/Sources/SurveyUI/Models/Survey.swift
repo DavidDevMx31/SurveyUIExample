@@ -111,6 +111,14 @@ public struct SurveyFactory {
             QuestionOption(id: "13", description: "Otro", allowsText: true)
         ]
         
+        let questionFourOptions = [
+            QuestionOption(id: "14", description: "El método que uso es repetitivo y tedioso"),
+            QuestionOption(id: "15", description: "Falta de opciones para practicar"),
+            QuestionOption(id: "16", description: "No puedo formarme el hábito"),
+            QuestionOption(id: "17", description: "Tengo poco tiempo"),
+            QuestionOption(id: "18", description: "Me cuesta aprender los términos y significados")
+        ]
+        
         do {
             
         }
@@ -120,7 +128,7 @@ public struct SurveyFactory {
                                                    type: .singleSelection(options: questionTwoOptions)),
                          Question(id: "3", prompt: "¿En qué contexto utilizas el inglés?",
                                                    type: .multipleSelection(options: questionThreeOptions)),
-                         
+                         Question(id: "4", prompt: "¿Cuáles de los siguientes factores complican tu aprendizaje del inglés?", type: .multipleSelection(options: questionFourOptions))
                          ]
         
         let markdownIntro: AttributedString = try! AttributedString(
