@@ -1,6 +1,6 @@
 # SurveyUI
 
-Este es un proyecto muestra de un paquete para insertar encuestas de usuario en aplicaciones de iOS.
+Este es un proyecto muestra de un package para insertar encuestas de usuario en aplicaciones iOS.
 
 ## Estructura del proyecto
 La carpeta *SurveyExample* contiene el proyecto principal. En este proyecto se puede hacer la configuración inicial del módulo de encuestas. El package de Survey ya contiene una configuración por defecto, pero esta se puede sobreescribir creando un objeto que conforme con el protocolo *SurveyTheme*.
@@ -8,8 +8,17 @@ La carpeta *SurveyExample* contiene el proyecto principal. En este proyecto se p
 ### SurveyTheme
 Al conformar con este protocolo, se pueden establecer los valores para las siguientes propiedades:
 
-- **backgroundColor**: define el color de fondo del módulo Survey.
-- **foregroundColor**: define el color de letra del módulo Survey.
+| Nombre de la propiedad | Tipo de dato | Descripción |
+| ------------- | ------------- |  ------------- |
+| backgroundColor  | Color  | El color de fondo de las vistas en el módulo Survey |
+| foregroundColor  | Color  | El color del texto del módulo Survey |
+| surveyIntroFont  | Font  | La fuente del texto de introducción a la encuesta |
+| questionFont  | Font  | La fuente para el texto de las preguntas |
+| calloutFont  | Font  | La fuente del texto de alertas |
+| bodyFont  | Font  | La fuente del resto de los textos |
+| optionBackgroundColor  | Color  | El color de fondo del recuadro con opciones para las preguntas |
+| unselectedOptionForegroundColor  | Color  | El color del texto de las opciones para la pregunta (cuando no ha sido seleccionado) |
+| selectedOptionForegroundColor  | Color  | El color del texto de las opciones para la pregunta (cuando está seleccionado) |
 
 El código contiene un ejemplo de cómo se puede inyectar un estilo personalizado al paquete *Survey*.
 
@@ -26,7 +35,8 @@ Para inicializar esta vista se requieren dos parámetros:
 
 ### Survey
 Survey define el modelo de las encuestas. Consta de las siguientes propiedades:
-
-- **Intro** (String): texto que se mostrará al usuario como una breve introducción. (opcional).
-- **Acknowledgments**(String): texto que mostrará al usuario al completar la encuesta.
-- **Questions**: un array con las preguntas de la encuesta.
+| Nombre de la propiedad | Tipo de dato | Descripción |
+| ------------- | ------------- |  ------------- |
+| Intro | String | Texto que se mostrará al usuario como una breve introducción (opcional)
+| Acknowledgments | String | Texto que mostrará al usuario al completar la encuesta
+| Questions | Question | Un array con las preguntas de la encuesta
